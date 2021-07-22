@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <H1>Szejdi dzisiaj jest malutka, Dzień dobły państwu</H1>
+    <H1>Dzień dobły państwu</H1>
 
 </body>
 </html>

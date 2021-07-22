@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/student")
+@RequestMapping("/customer")
 class DummyController{
 
-    @RequestMapping("/teaser")
+    @RequestMapping("/hello")
     public String showTeaser(){
         return "hello";
     }
