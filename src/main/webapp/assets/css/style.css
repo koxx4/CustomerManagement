@@ -1,16 +1,48 @@
 #main{
     background-color: gray;
-    size: auto;
     padding: 15px;
 }
 
-#header{
+.header{
+    border-style: double;
+    border-width: thin;
     text-align: center;
     background-color: darkseagreen;
     padding: 5px;
 }
 
 #content{
+    clear: left;
     padding: 10px;
+    background-color: cadetblue;
+}
+
+.standardGreenTable{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.standardGreenTable td{
+    text-align: left;
+    padding: 4px;
+}
+
+.standardGreenTable tr{
+    border-style: solid;
+    border-width: medium;
+}
+
+.standardGreenTable th{
+    border-style: solid;
+    border-width: thick;
+    text-align: center;
+    padding: 5px;
+}
+
+.standardGreenTable tr:nth-child(odd) {
+    background-color: darkolivegreen;
+}
+
+.standardGreenTable tr:nth-child(even){
     background-color: cadetblue;
 }

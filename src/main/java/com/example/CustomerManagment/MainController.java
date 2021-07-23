@@ -11,16 +11,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 class MainController {
 
     @Autowired
-    @Qualifier(value = "hibernateCustomerDataAccess")
-    CustomerDataAccess customerDataAccess;
+    @Qualifier(value = "defaultCustomerService")
+    CustomerService customerService;
 
     @RequestMapping("/list")
     public String showTeaser(Model model){
 
-        var customers = customerDataAccess.getCustomers(15);
+        var customers = customerService.getCustomers(15);
         model.addAttribute("customers", customers);
 
         return "main-page";
     }
+
+    @RequestMapping("/addCustomer")
+    public String addCustomer(){
+        return "add-customer";
+    }
+
+
 
 }

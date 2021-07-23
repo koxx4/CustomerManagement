@@ -32,7 +32,6 @@ public class HibernateCustomerDataAccess implements CustomerDataAccess{
         return foundCustomer;
     }
 
-    @Transactional
     @Override
     public List<Customer> getAllCustomers() {
 
@@ -43,7 +42,6 @@ public class HibernateCustomerDataAccess implements CustomerDataAccess{
         return customers;
     }
 
-    @Transactional
     @Override
     public List<Customer> getCustomers(int amount) {
 

@@ -10,17 +10,48 @@
 <html>
 <head>
     <title>Customer management</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/style.css">
+
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/assets/css/style.css">
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/assets/css/menuBarStyle.css">
+
 </head>
 <body>
 
     <div id="main">
-        <div id="header">
+
+        <div class="header">
             <h1>Customer management service</h1>
         </div>
+
+        <div class="menuBar" style="clear: left">
+
+            <div class="menuBarButtonContainer">
+                <input class="menuBarButton" type="button" value="Create new customer"
+                       onclick="window.location = 'addCustomer'"/>
+            </div>
+
+            <div class="menuBarButtonContainer">
+                <input class="menuBarButton" type="button" value="Delete customer"
+                       onclick="window.location = 'deleteCustomer'"/>
+            </div>
+
+            <div class="menuBarButtonContainer">
+                <input class="menuBarButton" type="button" value="Update customer"
+                       onclick="window.location = 'updateCustomer'"/>
+            </div>
+
+            <div class="menuBarButtonContainer">
+                <input class="menuBarButton" type="button" value="Main menu"
+                       onclick="window.location = 'list'"/>
+            </div>
+
+        </div>
+
         <div id="content">
             <h4>First 15 customers:</h4>
-            <table>
+            <table class="standardGreenTable">
                 <tr>
                     <th>ID</th>
                     <th>First name</th>

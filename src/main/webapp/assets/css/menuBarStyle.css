@@ -1,0 +1,29 @@
+.menuBar{
+    overflow: auto;
+    background-color: burlywood;
+    padding: 7px;
+}
+
+.menuBarButtonContainer{
+    text-align: center;
+    border-collapse: collapse;
+    float: left;
+    padding: 10px;
+    width: 20%;
+    height: auto;
+    border-right-style: solid;
+    border-width: thin;
+}
+
+.menuBarButton:hover{
+    background-color: darkseagreen;
+}
+
+.menuBarButton{
+    transition-duration: 500ms;
+    border-radius: 10px;
+    background-color: white;
+    width: 50%;
+    margin: 4px;
+    padding: 3px;
+}
