@@ -7,8 +7,15 @@
     <display-name>spring-mvc-demo</display-name>
 
     <absolute-ordering />
+    
 
     <!-- Spring MVC Configs -->
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
 
     <!-- Step 1: Configure Spring MVC Dispatcher Servlet -->
     <servlet>
