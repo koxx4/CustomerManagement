@@ -23,8 +23,10 @@ class MainController {
         return "main-page";
     }
 
-    @RequestMapping("/addCustomer")
-    public String addCustomer(){
+    @RequestMapping("/showAddCustomerForm")
+    public String addCustomer(Model model){
+        model.addAttribute("newCustomer", new Customer());
+
         return "add-customer";
     }
 

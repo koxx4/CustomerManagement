@@ -1,4 +1,4 @@
-#main{
+.main{
     background-color: gray;
     padding: 15px;
 }
@@ -11,7 +11,7 @@
     padding: 5px;
 }
 
-#content{
+.content{
     clear: left;
     padding: 10px;
     background-color: cadetblue;
@@ -37,6 +37,8 @@
     border-width: thick;
     text-align: center;
     padding: 5px;
+    font-size: medium;
+    font-style: italic;
 }
 
 .standardGreenTable tr:nth-child(odd) {

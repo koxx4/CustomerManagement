@@ -1,5 +1,6 @@
 .menuBar{
     overflow: auto;
+    width: 100%;
     background-color: burlywood;
     padding: 7px;
 }

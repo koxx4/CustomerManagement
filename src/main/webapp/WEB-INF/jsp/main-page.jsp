@@ -19,7 +19,7 @@
 </head>
 <body>
 
-    <div id="main">
+    <div class="main">
 
         <div class="header">
             <h1>Customer management service</h1>
@@ -29,17 +29,17 @@
 
             <div class="menuBarButtonContainer">
                 <input class="menuBarButton" type="button" value="Create new customer"
-                       onclick="window.location = 'addCustomer'"/>
+                       onclick="window.location = 'showAddCustomerForm'"/>
             </div>
 
             <div class="menuBarButtonContainer">
                 <input class="menuBarButton" type="button" value="Delete customer"
-                       onclick="window.location = 'deleteCustomer'"/>
+                       onclick="window.location = 'showDeleteCustomerForm'"/>
             </div>
 
             <div class="menuBarButtonContainer">
                 <input class="menuBarButton" type="button" value="Update customer"
-                       onclick="window.location = 'updateCustomer'"/>
+                       onclick="window.location = 'showUpdateCustomerForm'"/>
             </div>
 
             <div class="menuBarButtonContainer">
@@ -49,28 +49,33 @@
 
         </div>
 
-        <div id="content">
+        <div class="content">
             <h4>First 15 customers:</h4>
             <table class="standardGreenTable">
-                <tr>
-                    <th>ID</th>
-                    <th>First name</th>
-                    <th>Second name</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                    <th>IP Address</th>
-                </tr>
 
-                <core:forEach var="customer" items="${customers}">
+                <thead>
                     <tr>
-                        <td>${customer.id}.</td>
-                        <td>${customer.firstName}</td>
-                        <td>${customer.lastName}</td>
-                        <td>${customer.email}</td>
-                        <td>${customer.gender}</td>
-                        <td>${customer.ipAddress}</td>
+                        <th>ID</th>
+                        <th>First name</th>
+                        <th>Second name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>IP Address</th>
                     </tr>
-                </core:forEach>
+                </thead>
+
+                <tbody>
+                    <core:forEach var="customer" items="${customers}">
+                        <tr>
+                            <td>${customer.id}.</td>
+                            <td>${customer.firstName}</td>
+                            <td>${customer.lastName}</td>
+                            <td>${customer.email}</td>
+                            <td>${customer.gender}</td>
+                            <td>${customer.ipAddress}</td>
+                        </tr>
+                    </core:forEach>
+                </tbody>
 
             </table>
         </div>
