@@ -31,7 +31,7 @@
 	<!-- Database sources / connection pool / hibernate setup -->
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="org.mariadb.jdbc.Driver"/>
-		<property name="jdbcUrl" value="jdbc:mariadb://koxx4.bounceme.net:3306/web_customer"/>
+		<property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/web_customer"/>
 		<property name="user" value="web_customer_user"/>
 		<property name="password" value="strong_password"/>
 
