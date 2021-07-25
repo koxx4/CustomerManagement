@@ -5,12 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -23,7 +18,7 @@ class MainController {
     CustomerService customerService;
 
     @RequestMapping("/list")
-    public String showTeaser(Model model){
+    private String showTeaser(Model model){
 
         var customers = customerService.getCustomersInverse(10);
         model.addAttribute("customers", customers);
@@ -32,20 +27,20 @@ class MainController {
     }
 
     @RequestMapping("/showAddCustomerForm")
-    public String showAddCustomerForm(Model model){
+    private String showAddCustomerForm(Model model){
         model.addAttribute("newCustomer", new Customer());
 
         return "add-customer";
     }
 
     @PostMapping("/addCustomer")
-    public String addCustomer(@Valid @ModelAttribute("newCustomer") Customer customerToAdd,
+    private String addCustomer(@Valid @ModelAttribute("newCustomer") Customer customerToAdd,
                                BindingResult bindingResult){
 
         if(bindingResult.hasErrors())
             return "add-customer";
 
-        customerService.addCustomer(customerToAdd);
+        customerService.saveCustomer(customerToAdd);
 
         return "redirect:/customer/list";
     }

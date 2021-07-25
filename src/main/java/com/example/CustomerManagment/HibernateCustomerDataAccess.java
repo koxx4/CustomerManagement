@@ -53,14 +53,14 @@ public class HibernateCustomerDataAccess implements CustomerDataAccess{
         return customers;
     }
 
-    @Transactional
+
     @Override
     public void deleteCustomer(Customer customer) {
         var session = sessionFactory.getCurrentSession();
         session.delete(customer);
     }
 
-    @Transactional
+
     @Override
     public void deleteCustomerWithId(int id) {
         var session = sessionFactory.getCurrentSession();
@@ -69,29 +69,23 @@ public class HibernateCustomerDataAccess implements CustomerDataAccess{
                 .executeUpdate();
     }
 
-    @Transactional
-    @Override
-    public void updateCustomer(Customer customerToUpdate, Customer updatedCustomer) {
 
-        var session = sessionFactory.getCurrentSession();
-        customerToUpdate = session.get(Customer.class, customerToUpdate.getId());
-
-        customerToUpdate = updatedCustomer;
-        session.update(customerToUpdate);
-    }
-
-    @Transactional
     @Override
     public void updateCustomerWithId(int id, Customer updatedCustomer) {
 
         var session = sessionFactory.getCurrentSession();
         var customerToUpdate = session.get(Customer.class, id);
 
-        customerToUpdate = updatedCustomer;
+        customerToUpdate.setFirstName(updatedCustomer.getFirstName());
+        customerToUpdate.setLastName(updatedCustomer.getLastName());
+        customerToUpdate.setEmail(updatedCustomer.getEmail());
+        customerToUpdate.setGender(updatedCustomer.getGender());
+        customerToUpdate.setIpAddress(updatedCustomer.getIpAddress());
+
         session.update(customerToUpdate);
     }
 
-    @Transactional
+
     @Override
     public void addCustomer(Customer customer) {
         var session = sessionFactory.getCurrentSession();
@@ -107,4 +101,5 @@ public class HibernateCustomerDataAccess implements CustomerDataAccess{
 
         return customers;
     }
+
 }

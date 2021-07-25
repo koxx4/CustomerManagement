@@ -26,21 +26,6 @@
         <div class="menuBar">
 
             <div class="menuBarButtonContainer">
-                <input class="menuBarButton" type="button" value="Create new customer"
-                       onclick="window.location = 'addCustomer'"/>
-            </div>
-
-            <div class="menuBarButtonContainer">
-                <input class="menuBarButton" type="button" value="Delete customer"
-                       onclick="window.location = 'deleteCustomer'"/>
-            </div>
-
-            <div class="menuBarButtonContainer">
-                <input class="menuBarButton" type="button" value="Update customer"
-                       onclick="window.location = 'updateCustomer'"/>
-            </div>
-
-            <div class="menuBarButtonContainer">
                 <input class="menuBarButton" type="button" value="Main menu"
                        onclick="window.location = 'list'"/>
             </div>
