@@ -25,4 +25,12 @@ public class DefaultCustomerService implements CustomerService{
     public List<Customer> getAllCustomers() {
         return customerDataAccess.getAllCustomers();
     }
+
+    @Transactional
+    @Override
+    public void addCustomer(Customer customer) {
+        customerDataAccess.addCustomer(customer);
+    }
+
+
 }

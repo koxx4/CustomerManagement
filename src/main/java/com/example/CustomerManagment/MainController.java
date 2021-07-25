@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -24,12 +26,17 @@ class MainController {
     }
 
     @RequestMapping("/showAddCustomerForm")
-    public String addCustomer(Model model){
+    public String showAddCustomerForm(Model model){
         model.addAttribute("newCustomer", new Customer());
 
         return "add-customer";
     }
 
+    @PostMapping("/addCustomer")
+    public String addCustomer(@ModelAttribute("newCustomer") Customer customerToAdd){
+        customerService.addCustomer(customerToAdd);
 
+        return "redirect:/customer/list";
+    }
 
 }
