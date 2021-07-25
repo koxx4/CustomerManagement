@@ -8,7 +8,6 @@ public interface CustomerDataAccess {
      List<Customer> getCustomers(int amount);
      void deleteCustomer(Customer customer);
      void deleteCustomerWithId(int id);
-     void updateCustomer(Customer customerToUpdate, Customer updatedCustomer);
      void updateCustomerWithId(int id, Customer updatedCustomer);
      void addCustomer(Customer customer);
      List<Customer> getCustomersReversedOrder(int amount);

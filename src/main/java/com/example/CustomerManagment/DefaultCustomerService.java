@@ -34,8 +34,20 @@ public class DefaultCustomerService implements CustomerService{
 
     @Transactional
     @Override
-    public void addCustomer(Customer customer) {
+    public Customer getCustomerById(int id) {
+        return customerDataAccess.getCustomerWithId(id);
+    }
+
+    @Transactional
+    @Override
+    public void saveCustomer(Customer customer) {
         customerDataAccess.addCustomer(customer);
+    }
+
+    @Transactional
+    @Override
+    public void updateCustomer(int id, Customer updatedCustomer) {
+        customerDataAccess.updateCustomerWithId(id, updatedCustomer);
     }
 
 

@@ -39,7 +39,7 @@
 
             <div class="menuBarButtonContainer">
                 <input class="menuBarButton" type="button" value="Update customer"
-                       onclick="window.location = 'showUpdateCustomerForm'"/>
+                       onclick="window.location = 'update/showUpdatableCustomerList'"/>
             </div>
 
             <div class="menuBarButtonContainer">

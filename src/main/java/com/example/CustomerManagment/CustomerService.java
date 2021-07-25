@@ -3,8 +3,10 @@ package com.example.CustomerManagment;
 import java.util.List;
 
 public interface CustomerService {
-    public List<Customer> getCustomers(int amount);
-    public List<Customer> getCustomersInverse(int amount);
-    public List<Customer> getAllCustomers();
-    public void addCustomer(Customer customer);
+     List<Customer> getCustomers(int amount);
+     List<Customer> getCustomersInverse(int amount);
+     List<Customer> getAllCustomers();
+     Customer getCustomerById(int id);
+     void saveCustomer(Customer customer);
+     void updateCustomer(int id, Customer customerToUpdate);
 }
