@@ -4,9 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/customer")
@@ -19,7 +25,7 @@ class MainController {
     @RequestMapping("/list")
     public String showTeaser(Model model){
 
-        var customers = customerService.getCustomers(15);
+        var customers = customerService.getCustomersInverse(10);
         model.addAttribute("customers", customers);
 
         return "main-page";
@@ -33,7 +39,12 @@ class MainController {
     }
 
     @PostMapping("/addCustomer")
-    public String addCustomer(@ModelAttribute("newCustomer") Customer customerToAdd){
+    public String addCustomer(@Valid @ModelAttribute("newCustomer") Customer customerToAdd,
+                               BindingResult bindingResult){
+
+        if(bindingResult.hasErrors())
+            return "add-customer";
+
         customerService.addCustomer(customerToAdd);
 
         return "redirect:/customer/list";

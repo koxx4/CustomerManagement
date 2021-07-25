@@ -22,6 +22,12 @@ public class DefaultCustomerService implements CustomerService{
 
     @Transactional
     @Override
+    public List<Customer> getCustomersInverse(int amount) {
+        return customerDataAccess.getCustomersReversedOrder(amount);
+    }
+
+    @Transactional
+    @Override
     public List<Customer> getAllCustomers() {
         return customerDataAccess.getAllCustomers();
     }

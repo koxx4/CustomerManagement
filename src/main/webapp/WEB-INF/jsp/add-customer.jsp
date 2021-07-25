@@ -55,11 +55,13 @@
                         <tr>
                             <td>First name:</td>
                             <td><spring:input path="firstName" /></td>
+                            <td><spring:errors path="firstName" cssClass="errorMessage"/></td>
                         </tr>
 
                         <tr>
                             <td>Last name:</td>
                             <td><spring:input path="lastName" /></td>
+                            <td><spring:errors path="lastName" cssClass="errorMessage"/></td>
                         </tr>
 
                         <tr>

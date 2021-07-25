@@ -1,6 +1,8 @@
 package com.example.CustomerManagment;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "customer")
@@ -12,9 +14,13 @@ public class Customer {
     private Integer id;
 
     @Column(name = "first_name")
+    @NotNull(message = "First name cannot be empty!")
+    @NotBlank(message = "First name cannot be empty!")
     private String firstName;
 
     @Column(name = "last_name")
+    @NotNull(message = "Last name cannot be empty!")
+    @NotBlank(message = "Last name cannot be empty!")
     private String lastName;
 
     @Column(name = "email")

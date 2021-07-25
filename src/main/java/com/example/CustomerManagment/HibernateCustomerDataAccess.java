@@ -97,4 +97,14 @@ public class HibernateCustomerDataAccess implements CustomerDataAccess{
         var session = sessionFactory.getCurrentSession();
         session.save(customer);
     }
+
+    @Override
+    public List<Customer> getCustomersReversedOrder(int amount) {
+        var session = sessionFactory.getCurrentSession();
+        var customers = session.createQuery("FROM Customer AS c ORDER BY c.id DESC").
+                setMaxResults(amount)
+                .getResultList();
+
+        return customers;
+    }
 }

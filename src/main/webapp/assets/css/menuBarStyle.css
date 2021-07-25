@@ -1,7 +1,7 @@
 .menuBar{
     overflow: auto;
     width: 100%;
-    background-color: burlywood;
+    background-color: #738290;
     padding: 7px;
 }
 
@@ -17,13 +17,13 @@
 }
 
 .menuBarButton:hover{
-    background-color: darkseagreen;
+    background-color: #C2D8B9;
 }
 
 .menuBarButton{
     transition-duration: 500ms;
     border-radius: 10px;
-    background-color: white;
+    background-color: #FFFCF7;
     width: 50%;
     margin: 4px;
     padding: 3px;

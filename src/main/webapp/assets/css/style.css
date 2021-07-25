@@ -1,5 +1,9 @@
+:root{
+     background-color: #A1B5D8;
+ }
+
 .main{
-    background-color: gray;
+    background-color: #A1B5D8;
     padding: 15px;
 }
 
@@ -7,14 +11,14 @@
     border-style: double;
     border-width: thin;
     text-align: center;
-    background-color: darkseagreen;
+    background-color: #E4F0D0;
     padding: 5px;
 }
 
 .content{
     clear: left;
     padding: 10px;
-    background-color: cadetblue;
+    background-color: #A1B5D8;
 }
 
 .standardGreenTable{
@@ -36,15 +40,22 @@
     border-style: solid;
     border-width: thick;
     text-align: center;
-    padding: 5px;
+    background-color: #738290;
+    padding: 20px;
     font-size: medium;
     font-style: italic;
 }
 
 .standardGreenTable tr:nth-child(odd) {
-    background-color: darkolivegreen;
+    background-color: #E4F0D0;
 }
 
 .standardGreenTable tr:nth-child(even){
-    background-color: cadetblue;
+    background-color: #C2D8B9;
+}
+
+.errorMessage{
+    background-color: red;
+    font-size: medium;
+    font-style: italic;
 }
