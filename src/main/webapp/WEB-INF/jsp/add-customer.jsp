@@ -20,7 +20,7 @@
     <div class="main">
 
         <div class="header">
-            <h1>Add customer</h1>
+            <h2>Add customer</h2>
         </div>
 
         <div class="menuBar">

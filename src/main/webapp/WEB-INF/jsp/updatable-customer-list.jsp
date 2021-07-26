@@ -17,12 +17,14 @@
 <body>
 
     <div class="main">
-        <div class="header"> Edit customers information </div>
+        <div class="header">
+            <h2>Update customers</h2>
+        </div>
         <div class="menuBar">
 
             <div class="menuBarButtonContainer">
                 <input class="menuBarButton" type="button" value="Main menu"
-                       onclick="window.location = '/customer/list'"/>
+                       onclick="window.location = '${pageContext.request.contextPath}/customer/list'"/>
             </div>
 
         </div>
@@ -49,9 +51,13 @@
                             <td> ${customer.gender} </td>
                             <td> ${customer.ipAddress} </td>
                             <td>
-                                <form method="post" action="showCustomerToUpdate" >
+                                <form method="post" action="showCustomerToModify" >
                                     <input name="customerId" type="hidden" value="${customer.id}"/>
                                     <input type="submit" value="Edit"/>
+                                </form>
+                                <form method="post" action="deleteCustomer" >
+                                    <input name="customerId" type="hidden" value="${customer.id}"/>
+                                    <input type="submit" value="Delete"/>
                                 </form>
                             </td>
                         </tr>

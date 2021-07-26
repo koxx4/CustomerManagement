@@ -22,7 +22,7 @@
     <div class="main">
 
         <div class="header">
-            <h1>Customer management service</h1>
+            <h2>Customer management service</h2>
         </div>
 
         <div class="menuBar" style="clear: left">
@@ -33,24 +33,14 @@
             </div>
 
             <div class="menuBarButtonContainer">
-                <input class="menuBarButton" type="button" value="Delete customer"
-                       onclick="window.location = 'showDeleteCustomerForm'"/>
-            </div>
-
-            <div class="menuBarButtonContainer">
-                <input class="menuBarButton" type="button" value="Update customer"
+                <input class="menuBarButton" type="button" value="Update customers"
                        onclick="window.location = 'update/showUpdatableCustomerList'"/>
-            </div>
-
-            <div class="menuBarButtonContainer">
-                <input class="menuBarButton" type="button" value="Main menu"
-                       onclick="window.location = 'list'"/>
             </div>
 
         </div>
 
         <div class="content">
-            <h4>First 15 customers:</h4>
+            <h4>Last 15 customers:</h4>
             <table class="standardGreenTable">
 
                 <thead>

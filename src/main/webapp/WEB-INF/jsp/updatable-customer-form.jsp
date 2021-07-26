@@ -16,21 +16,21 @@
    <div class="main">
 
      <div class="header">
-       <h1>Updating customer of ID: ${customerToUpdate.id}</h1>
+       <h2>Updating customer of ID: ${customerToUpdate.id}</h2>
      </div>
 
      <div class="menuBar">
 
        <div class="menuBarButtonContainer">
          <input class="menuBarButton" type="button" value="Main menu"
-                onclick="window.location = '/customer/list'"/>
+                onclick="window.location = '${pageContext.request.contextPath}/customer/list'"/>
        </div>
 
      </div>
      <div class="content">
          <table class="standardGreenTable">
              <tbody>
-             <spring:form action="updateCustomer" method="POST" name="addCustomerForm"
+             <spring:form action="modifyCustomer" method="POST" name="addCustomerForm"
                           modelAttribute="customerToUpdate">
 
                  <tr>
@@ -61,7 +61,6 @@
                              <spring:option value="Non-binary"/>
                              <spring:option value="Male"/>
                              <spring:option value="Female"/>
-                             <spring:option value="Tyrannosaurus"/>
                          </spring:select>
                      </td>
                  </tr>

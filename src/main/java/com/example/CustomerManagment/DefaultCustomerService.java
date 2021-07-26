@@ -50,5 +50,11 @@ public class DefaultCustomerService implements CustomerService{
         customerDataAccess.updateCustomerWithId(id, updatedCustomer);
     }
 
+    @Transactional
+    @Override
+    public void deleteCustomer(int id) {
+        customerDataAccess.deleteCustomerWithId(id);
+    }
+
 
 }

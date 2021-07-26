@@ -29,11 +29,11 @@ public class UpdateController {
         return "updatable-customer-list";
     }
 
-    @PostMapping("showCustomerToUpdate")
-    private String showUpdatableCustomerForm(@RequestParam("customerId") String customerToUpdateId, Model model){
+    @PostMapping("showCustomerToModify")
+    private String showUpdatableModifiableForm(@RequestParam("customerId") String customerToModifyId, Model model){
 
         var customerToUpdate = customerService.getCustomerById(
-                Integer.parseInt(customerToUpdateId));
+                Integer.parseInt(customerToModifyId));
         assert customerToUpdate != null;
 
         model.addAttribute("customerToUpdate", customerToUpdate);
@@ -41,8 +41,8 @@ public class UpdateController {
         return "updatable-customer-form";
     }
 
-    @PostMapping("updateCustomer")
-    private String updateCustomer(@Valid @ModelAttribute("customerToUpdate") Customer customer,
+    @PostMapping("modifyCustomer")
+    private String modifyCustomer(@Valid @ModelAttribute("customerToUpdate") Customer customer,
                                   BindingResult bindingResult){
 
         if(bindingResult.hasErrors())
@@ -50,6 +50,14 @@ public class UpdateController {
 
         customerService.updateCustomer(customer.getId(), customer);
         return "redirect:/customer/list";
+    }
+
+    @PostMapping("deleteCustomer")
+    private String deleteCustomer(@RequestParam("customerId") String customerToModifyId){
+        assert customerToModifyId != null;
+        customerService.deleteCustomer(Integer.parseInt(customerToModifyId));
+
+        return "redirect:showUpdatableCustomerList";
     }
 
 }
